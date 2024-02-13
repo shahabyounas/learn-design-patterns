@@ -35,8 +35,8 @@ export default function Home() {
     }
     observable.attach(ObserverFound!);
 
-    setObservers((probservers) => {
-      return probservers.map(obsr => {
+    setObservers((probservers: any) => {
+      return probservers.map((obsr: Observer) => {
         if(obsr.id == id){
           return { ...obsr, isSubscribed: true }
         }
@@ -47,7 +47,7 @@ export default function Home() {
     setbservables([observable]);
   }
 
-  function updateObservers(observable: Observable): Observer[]{
+  function updateObservers(observable: Observable): any{
     const notifyObservers = observable.observers;
 
     const updateobservers = observers.map((sub: Observer) => {
@@ -62,7 +62,7 @@ export default function Home() {
   function notificationRead(observable: Observable){
     const notifyObservers = observable.observers;
 
-    const updateobservers = observers.map((obsr: Observer) => {
+    const updateobservers: any = observers.map((obsr: Observer) => {
       const foundObserver = notifyObservers.find((o: Observer) => o.id == obsr.id);
       if (foundObserver) return { ...foundObserver, notifyObserver: false, isSubscribed: true  };
       return obsr;
