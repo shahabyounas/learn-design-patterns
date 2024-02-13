@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Observer Pattern Visualization
+![Observer patterens](https://github.com/shahabyounas/learn-design-patterns/assets/13433949/d7d35df9-5ebc-48a0-ac24-2c91711066af)
+
+
+
 ## Getting Started
 
 First, run the development server:
