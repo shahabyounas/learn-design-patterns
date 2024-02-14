@@ -4,9 +4,6 @@ import { getRandId } from "@/app/util";
 export function ObserverCard(props: Observer) {
   const notifyObserver =   props.notifyObserver;
   const subscribe  = props.isSubscribed ? 'Subscried' : 'Subscribe Now'
-  if(props.isSubscribed){
-    console.log("sub===", props.isSubscribed)
-  }
   return (
       <div key={notifyObserver && getRandId()} className={`max-w-sm my-1 bg-white mx-1 min-h-36 min-w-48 border 
                 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ${notifyObserver && 'splash-card-bg'}`}>
@@ -16,7 +13,7 @@ export function ObserverCard(props: Observer) {
               {props.name}
             </span>
           </p>
-            <button className="bg-black text-white px-3 rounded" onClick={props.onClick}> {subscribe} </button>
+            <button className="bg-black text-white px-3 rounded" onClick={() => props.onClick(props.id)}> {subscribe} </button>
         </div>
       </div>
   );
